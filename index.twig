@@ -1,0 +1,30 @@
+
+<header style="background-color: #FFFFFF; border-bottom: 1px solid #EDEDED;">
+  <img src="/assets/logo.png" alt="شعار المتجر" style="height: 50px;">
+  <nav>
+    <a href="/">الرئيسية</a>
+    <a href="/products">المنتجات</a>
+    <a href="/offers">العروض</a>
+  </nav>
+</header>
+
+<section class="hero-banner" style="background-color: #FFF8EF; padding: 50px; text-align: center;">
+  <h1 style="color: #C8A86B; font-size: 2.5em;">جمالك يبدأ من هنا</h1>
+  <p style="margin-bottom: 20px;">منتجات أصلية وآمنة لبشرتك</p>
+  <a href="/products" class="btn-gold">تسوقي الآن</a>
+</section>
+
+<section class="featured-products" style="padding: 40px; background: #fff;">
+  <h2 style="text-align: center; color: #333;">منتجات مختارة</h2>
+  <div class="product-grid">
+    {% for product in collections.featured.products %}
+    <div class="product-card">
+      <img src="{{ product.main_image }}">
+      <h3>{{ product.name }}</h3>
+      <p class="price">{{ product.price | money }}</p>
+      <a href="{{ product.url }}" class="btn-gold">أضف للسلة</a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+    
